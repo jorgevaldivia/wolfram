@@ -28,7 +28,7 @@ module Wolfram
 
   def run(argv=ARGV)
     return puts("Usage: wolfram QUERY") if argv.empty?
-    puts fetch(argv.join(' ')).inspect
+    fetch(argv.join(' ')).inspect
   rescue MissingNodeError
     warn "Wolfram Error: Invalid response - #{$!.message}"
   rescue RuntimeError
